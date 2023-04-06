@@ -1,11 +1,11 @@
 pipeline{
-     agent { label 'slave' }
+     agent { label 'dev-eniv' }
      stages{
        stage(scm) {
            steps{
 checkout([$class: 'GitSCM', 
     branches: [[name: '*/feature']], 
-    userRemoteConfigs: [[credentialsId: '4a1288aa-6391-4d75-9387-f37f8a43bd1d ', url: 'https://github.com/devopsamar/mavenrepo.git']]
+    userRemoteConfigs: [[credentialsId: '4a1288aa-6391-4d75-9387-f37f8a43bd1d ', url: 'https://github.com/sanikommu12/mavenrepo.git']]
 ])
 }
        } 
