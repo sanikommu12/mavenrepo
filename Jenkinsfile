@@ -13,5 +13,14 @@ pipeline {
       }
     }
 
+    stage('QA') {
+      steps {
+        withSonarQubeEnv(installationName: 'sonar', credentialsId: '2133', envOnly: true) {
+          sh '/usr/share/maven/bin/mvn sonar:sonar'
+        }
+
+      }
+    }
+
   }
 }
